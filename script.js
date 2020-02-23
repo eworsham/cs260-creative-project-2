@@ -12,7 +12,7 @@ document.getElementById("submit").addEventListener("click", function(event) {
       return response.json();
     }).then(function(json) {
       console.log(json);
-      let results = "<div class='results'>";
+      let results = "<div class='def'>";
 
       if (typeof(json[0]) != "object") {
         results += "<p>Word not found, enter another word";
@@ -30,6 +30,6 @@ document.getElementById("submit").addEventListener("click", function(event) {
 
         results += "</div>";
       }
-      document.getElementById("def").innerHTML = results;
+      document.getElementById("results").innerHTML = results;
     });
 });
