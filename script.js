@@ -11,11 +11,10 @@ document.getElementById("submit").addEventListener("click", function(event) {
     .then(function(response) {
       return response.json();
     }).then(function(json) {
-      console.log(json);
       let results = "<div class='def'>";
 
       if (typeof(json[0]) != "object") {
-        results += "<p>Word not found, enter another word";
+        results += "<p>Word not found, enter another word</p>";
       } else {
 
         let temp = json[0].fl;
@@ -27,9 +26,8 @@ document.getElementById("submit").addEventListener("click", function(event) {
         temp = temp.charAt(0).toUpperCase() + temp.slice(1, temp.length);
         results += "<h2>" + temp + " Definition</h2>";
         results += "<p>" + json[1].shortdef + "</p>";
-
-        results += "</div>";
       }
+      results += "</div>";
       document.getElementById("results").innerHTML = results;
     });
 });
